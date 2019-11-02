@@ -1,6 +1,6 @@
 <?php
 /*
-Plugin Name: Mantas kar Plugin
+Plugin Name: Nematomi Vandenyne Plugin
 */
 
 if (!function_exists('write_log')) {
@@ -73,16 +73,14 @@ if ( ! function_exists( 'mantas_categories_view' ) ) {
     }
 }
 
-add_filter( 'page_template', 'specialCategotry' );
-function specialCategotry( $page_template )
-{
-    // if ( is_page( 'kunui' ) ) {
-    //     $page_template = plugin_dir_path( __FILE__ ) . 'special-category.php';
-    // }
-    return $page_template;
-}
-
-apply_filters( 'template_include', plugin_dir_path( __FILE__ ) . 'special-category.php' );
+// add_filter( 'page_template', 'specialCategotry' );
+// function specialCategotry( $page_template )
+// {
+//     // if ( is_page( 'kunui' ) ) {
+//     //     $page_template = plugin_dir_path( __FILE__ ) . 'special-category.php';
+//     // }
+//     return $page_template;
+// }
 
 
 // require_once "./FrontPageRedesign2.php";
@@ -138,4 +136,4 @@ apply_filters( 'template_include', plugin_dir_path( __FILE__ ) . 'special-catego
 // wp_enqueue_script('mantas-plugin-js', plugins_url('/js/mantas-plugin-js.js', __FILE__),
 //                 ['jquery'], "1", true);
 
-wp_enqueue_style('custom-mantas-css', plugins_url('/css/mantas-style.css', __FILE__));
+wp_enqueue_style('custom-mantas-css', plugins_url('/css/mantas-style.min.css', __FILE__));
