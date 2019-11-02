@@ -1,0 +1,28 @@
+.special-promo-page {
+  font-family: Jura, sans-serif;
+  padding: 0 !important;
+  line-height: 1.5;
+
+  &__image-container {
+    height: 600px;
+    width: 100%;
+    margin-bottom: -300px;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+
+  &__content {
+    background: #fff;
+    padding: 3rem;
+  }
+
+  .wc-block-grid {
+    margin-top: 5rem;
+  }
+
+  h1 {
+    text-transform: unset;
+    font-size: 2.4rem;
+  }
+}

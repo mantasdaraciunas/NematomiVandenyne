@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "AAAA,AAAA,mBAAmB,CAAC;EAClB,WAAW,EAAE,gBAAgB;CAC9B",
+    "sources": [
+        "specialPromoPage.scss"
+    ],
+    "names": [],
+    "file": "specialPromoPage.css"
+}

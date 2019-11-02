@@ -1,0 +1,40 @@
+.shop-categories {
+  position: relative;
+  min-height: 50px;
+  z-index: 1;
+
+  &__current {
+    cursor: pointer;
+    font-size: 1.1rem;
+    padding: 0.35rem 1.15rem;
+    border: 1px solid rgba(0, 0, 0, 0.7);
+    border-radius: 5px;
+    position: absolute;
+    background: rgba(#fff, 0.95);
+    z-index: 1;
+  }
+
+  &__cat {
+    min-height: 48px !important;
+    font-size: 1.1rem;
+    padding: 0.35rem 1.15rem;
+  }
+
+  &__input {
+    display: none;
+  }
+
+  &__input:checked ~ &__full-list {
+    display: block;
+  }
+
+  &__full-list {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    min-height: 100%;
+    background: rgba(#fff, 1);
+  }
+}

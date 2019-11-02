@@ -1,0 +1,40 @@
+.contact {
+  position: relative;
+  font-family: Jura !important;
+}
+
+.contact__us {
+  position: relative;
+  background-image: url("https://vandenyne.lt/wp-content/uploads/2019/10/IMG_9738.jpg");
+  background-color: rgba(174, 198, 207, 0.4);
+  background-blend-mode: overlay;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100%;
+  height: 200px;
+}
+
+.contact input,
+.contact textarea {
+  border-radius: 5px !important;
+}
+
+.contact input[type="submit"] {
+  border: 1px solid #000;
+  background: #fff;
+  border-radius: 5px;
+  padding: 0.3rem 3.8rem !important;
+  color: #000;
+  -webkit-transition: all 0.4s;
+  transition: all 0.4s;
+  cursor: pointer;
+}
+
+.contact input[type="submit"]:hover {
+  color: #000 !important;
+  text-decoration: underline;
+  -webkit-transform: translateY(-2px);
+          transform: translateY(-2px);
+}
+/*# sourceMappingURL=contact.css.map */

@@ -1,0 +1,83 @@
+@import url("https://fonts.googleapis.com/css?family=Jura&display=swap");
+
+.front-page {
+  color: #282828;
+  font-family: "Jura", sans-serif !important;
+}
+
+.front-page__image {
+  width: 100%;
+  height: 80vh;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.front-page__title {
+  font-size: 3rem;
+  font-weight: 700;
+  text-transform: capitalize;
+  text-align: center;
+}
+
+.front-page__subtitle {
+  font-size: 2rem;
+  font-weight: 200;
+  text-align: center;
+}
+.front-page__cat-parent {
+  padding: 2px;
+}
+
+.front-page__cat {
+  height: 165px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background: #7b9591;
+  border: 1px solid #7b9591;
+  color: #fff;
+  /*margin-bottom: 30px;*/
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  transition: all 0.4s;
+  opacity: 0.8;
+}
+
+.front-page__cat:hover {
+  opacity: 1;
+}
+
+.front-page__cat-img {
+  width: 75px;
+  fill: #fff !important;
+}
+
+.front-page__cat-img * {
+  fill: #fff !important;
+}
+
+.front_title {
+  text-align: center;
+  font-size: 2.4rem;
+}
+.front_subtitle {
+  text-align: center;
+  font-size: 1.1rem;
+}
+
+.front-page__sales ul,
+.front-page__newest ul {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nm-row:not(:first-child) {
+  margin-top: 20px;
+}

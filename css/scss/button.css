@@ -1,0 +1,18 @@
+input[type="submit"],
+.btn {
+  border: 1px solid #000;
+  background: #fff;
+  border-radius: 5px;
+  padding: 0.5rem 1.8rem;
+  color: #000;
+  -webkit-transition: all 0.4s;
+  transition: all 0.4s;
+}
+
+input[type="submit"]:hover,
+.btn:hover {
+  text-decoration: underline;
+  -webkit-transform: translateY(-2px);
+          transform: translateY(-2px);
+}
+/*# sourceMappingURL=button.css.map */
