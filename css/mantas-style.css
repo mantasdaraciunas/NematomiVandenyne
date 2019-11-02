@@ -298,7 +298,6 @@ input[type="submit"]:hover,
 
 .front-page__star {
   position: relative;
-  background-image: url("https://vandenyne.lt/wp-content/uploads/2019/10/SoliduBalance.jpg");
   background-color: rgba(174, 198, 207, 0.4);
   background-blend-mode: overlay;
   background-position: left;
