@@ -73,6 +73,25 @@ if ( ! function_exists( 'mantas_categories_view' ) ) {
     }
 }
 
+// Filter 'kaledos' cat from shop
+add_action( 'woocommerce_product_query', 'prefix_custom_pre_get_posts_query' );
+function prefix_custom_pre_get_posts_query( $q ) {
+	
+	if( is_shop() || is_page('shop') ) { // set conditions here
+	    $tax_query = (array) $q->get( 'tax_query' );
+	
+	    $tax_query[] = array(
+	           'taxonomy' => 'product_cat',
+	           'field'    => 'slug',
+	           'terms'    => array( 'kaledos' ),
+	           'operator' => 'NOT IN'
+	    );
+	
+	
+	    $q->set( 'tax_query', $tax_query );
+	}
+}
+
 // add_filter( 'page_template', 'specialCategotry' );
 // function specialCategotry( $page_template )
 // {
