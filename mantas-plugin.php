@@ -59,6 +59,7 @@ if ( ! function_exists( 'mantas_categories_view' ) ) {
                                     $categories_view_output .= '</a></div>';
                                 }
                                 foreach($categories as $cat):
+                                    if(in_array($cat->slug, ['kaledos'])) continue;
 
                                     $categories_view_output .= '<div class="col col-xs-6 col-sm-4 col-md-2 shop-categories__cat">';
                                     $categories_view_output .= '<a href="'. get_term_link( (int) $cat->term_id, 'product_cat' ) . '" >';
