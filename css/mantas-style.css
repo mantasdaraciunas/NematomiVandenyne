@@ -146,6 +146,7 @@ input[type="submit"]:hover,
 .special-promo-page__content {
   background: #fff;
   padding: 3rem;
+  font-size: 1.05rem;
 }
 
 .special-promo-page .wc-block-grid {
