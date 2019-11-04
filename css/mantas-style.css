@@ -197,6 +197,18 @@ input[type="submit"]:hover,
   left: 25px !important;
 }
 
+.footer__social-media {
+  padding-left: 50px;
+}
+
+.footer__social-media-icon {
+  fill: #fff;
+}
+
+.footer__social-media-icon > * {
+  fill: #fff;
+}
+
 .front-page {
   color: #282828;
   font-family: "Jura", sans-serif !important;

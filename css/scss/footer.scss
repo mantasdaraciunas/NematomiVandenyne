@@ -1,0 +1,11 @@
+.footer {
+  &__social-media {
+    padding-left: 50px;
+  }
+  &__social-media-icon {
+    fill: #fff;
+    & > * {
+      fill: #fff;
+    }
+  }
+}
