@@ -209,6 +209,11 @@ input[type="submit"]:hover,
   }
 }
 
+.footer__social-media-icon {
+  width: 20px !important;
+  height: 20px !important;
+}
+
 .footer__social-media-icon:not(:last-child) {
   margin-right: 1rem;
 }
