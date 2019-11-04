@@ -1,7 +1,11 @@
 .wc-block-grid__product-title {
   color: #777777;
-  font-weight: normal;
-  margin-bottom: 0;
+  font-weight: normal !important;
+  margin-bottom: 0 !important;
+}
+
+.wc-block-grid__product-price.price {
+  margin-bottom: 0 !important;
 }
 
 .woocommerce-Price-amount.amount {
