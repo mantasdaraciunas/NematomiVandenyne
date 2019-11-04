@@ -1,6 +1,5 @@
 .footer {
   &__social-media {
-    display: none;
     padding-left: 50px;
 
     @media screen and (max-width: 991px) {
@@ -8,12 +7,16 @@
       text-align: center;
     }
   }
-  &__social-media-icon {
-    width: 20px !important;
-    height: 20px !important;
+
+  &__social-media-link {
     &:not(:last-child) {
       margin-right: 1rem;
     }
+  }
+
+  &__social-media-icon {
+    width: 20px !important;
+    height: 20px !important;
   }
 }
 

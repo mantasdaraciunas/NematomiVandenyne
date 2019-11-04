@@ -198,7 +198,6 @@ input[type="submit"]:hover,
 }
 
 .footer__social-media {
-  display: none;
   padding-left: 50px;
 }
 
@@ -209,13 +208,13 @@ input[type="submit"]:hover,
   }
 }
 
+.footer__social-media-link:not(:last-child) {
+  margin-right: 1rem;
+}
+
 .footer__social-media-icon {
   width: 20px !important;
   height: 20px !important;
-}
-
-.footer__social-media-icon:not(:last-child) {
-  margin-right: 1rem;
 }
 
 @media screen and (max-width: 991px) {
