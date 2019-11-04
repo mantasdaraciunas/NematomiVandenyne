@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "AAAA,AAAA,sBAAsB,CAAC;EACrB,WAAW,EAAE,YAAY;EACzB,sBAAsB,EAAE,eAAe;EACvC,uBAAuB,EAAE,eAAe;EACxC,IAAI,EAAE,eAAe;CACtB",
+    "sources": [
+        "cookie-law.scss"
+    ],
+    "names": [],
+    "file": "cookie-law.css"
+}
