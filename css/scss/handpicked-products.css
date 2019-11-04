@@ -1,0 +1,28 @@
+.wc-block-grid__product-title {
+  color: #777777;
+  font-weight: normal;
+  margin-bottom: 0;
+}
+
+.woocommerce-Price-amount.amount {
+  color: #282828;
+}
+
+.wp-block-button__link.add_to_cart_button.ajax_add_to_cart {
+  color: #282828;
+  position: relative;
+  display: inline-block;
+  font-size: inherit;
+  line-height: inherit;
+  white-space: nowrap;
+  padding: 0;
+  border-bottom: 1px solid #cfcfcf;
+  background-color: transparent;
+  border-radius: 0;
+  font-size: 0.9rem;
+}
+
+.wp-block-button__link.add_to_cart_button.ajax_add_to_cart:hover {
+  color: #dc9814;
+}
+/*# sourceMappingURL=handpicked-products.css.map */
