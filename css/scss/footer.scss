@@ -1,11 +1,21 @@
 .footer {
   &__social-media {
     padding-left: 50px;
+
+    @media screen and (max-width: 991px) {
+      padding-left: 0;
+      text-align: center;
+    }
   }
   &__social-media-icon {
-    fill: #fff;
-    & > * {
-      fill: #fff;
+    &:not(:last-child) {
+      margin-right: 1rem;
     }
+  }
+}
+
+@media screen and (max-width: 991px) {
+  .nm-footer-bar-right {
+    text-align: center;
   }
 }

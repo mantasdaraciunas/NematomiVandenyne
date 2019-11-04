@@ -2,11 +2,20 @@
   padding-left: 50px;
 }
 
-.footer__social-media-icon {
-  fill: #fff;
+@media screen and (max-width: 991px) {
+  .footer__social-media {
+    padding-left: 0;
+    text-align: center;
+  }
 }
 
-.footer__social-media-icon > * {
-  fill: #fff;
+.footer__social-media-icon:not(:last-child) {
+  margin-right: 1rem;
+}
+
+@media screen and (max-width: 991px) {
+  .nm-footer-bar-right {
+    text-align: center;
+  }
 }
 /*# sourceMappingURL=footer.css.map */
