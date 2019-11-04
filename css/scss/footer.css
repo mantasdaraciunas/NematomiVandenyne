@@ -10,7 +10,7 @@
 }
 
 .footer__social-media-link:not(:last-child) {
-  margin-right: 1rem;
+  margin-right: 0.2rem;
 }
 
 .footer__social-media-icon {
