@@ -198,6 +198,7 @@ input[type="submit"]:hover,
 }
 
 .footer__social-media {
+  display: none;
   padding-left: 50px;
 }
 

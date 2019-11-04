@@ -1,5 +1,6 @@
 .footer {
   &__social-media {
+    display: none;
     padding-left: 50px;
 
     @media screen and (max-width: 991px) {
