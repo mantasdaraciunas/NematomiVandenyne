@@ -165,3 +165,39 @@ add_action( 'woocommerce_init', 'wc_remove_product_schema_product_archive' );
 //                 ['jquery'], "1", true);
 
 wp_enqueue_style('custom-mantas-css', plugins_url('/css/mantas-style.min.css', __FILE__));
+
+define( 'CB_PLUGIN_URL', plugins_url( 'NematomiVandenyne' ) );
+define( 'CB_PLUGIN_DIR_PATH', plugin_dir_path( __FILE__ ) );
+function gutenberg_custom_blocks() {
+	// Block front end styles.
+	wp_register_style(
+		'products-block-front-end-styles',
+		CB_PLUGIN_URL . '/products-block/style.css',
+		array( 'wp-edit-blocks' ),
+		filemtime( CB_PLUGIN_DIR_PATH . 'products-block/style.css' )
+	);
+	// Block editor styles.
+	wp_register_style(
+		'products-block-editor-styles',
+		CB_PLUGIN_URL . '/products-block/editor.css',
+		array( 'wp-edit-blocks' ),
+		filemtime( CB_PLUGIN_DIR_PATH . 'products-block/editor.css' )
+	);
+	// Block Editor Script.
+	wp_register_script(
+		'products-block-editor-js',
+		CB_PLUGIN_URL . '/products-block/products-block.js',
+		array( 'wp-blocks', 'wp-element', 'wp-editor', 'wp-components', 'wp-i18n' ),
+		filemtime( CB_PLUGIN_DIR_PATH . 'products-block/products-block.js' ),
+		true
+	);
+	register_block_type(
+		'NematomiVandenyne/products-block',
+		array(
+			'style'         => 'products-block-front-end-styles',
+			'editor_style'  => 'products-block-editor-styles',
+			'editor_script' => 'products-block-editor-js',
+		)
+	);
+}
+add_action( 'init', 'gutenberg_custom_blocks' );
