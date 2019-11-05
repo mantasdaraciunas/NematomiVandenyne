@@ -1,15 +1,13 @@
 <?php
 /*
- * Plugin Name: Nematomi Vandenyne Plugin
- * Plugin URI: https://vandenyne.lt
- * Description: This plugin creates a Gutenberg block
+ * Plugin Name: Nematomi Vandenyne
+ * Description: Nematomi Vandenyne Page Tweaks
  * Version: 1.0.1
  * Author: Mantas Daraciunas
  * License: GPL2
  * License URI: https://www.gnu.org/licenses/gpl-2.0.html
  * Text Domain: NematomiVandenyne
  * Domain Path: /languages
- *
 */
 
 if (!function_exists('write_log')) {
@@ -174,4 +172,3 @@ add_action( 'woocommerce_init', 'wc_remove_product_schema_product_archive' );
 //                 ['jquery'], "1", true);
 
 wp_enqueue_style('custom-mantas-css', plugins_url('/css/mantas-style.min.css', __FILE__));
-
