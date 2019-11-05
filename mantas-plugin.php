@@ -1,6 +1,15 @@
 <?php
 /*
-Plugin Name: Nematomi Vandenyne Plugin
+ * Plugin Name: Nematomi Vandenyne Plugin
+ * Plugin URI: https://vandenyne.lt
+ * Description: This plugin creates a Gutenberg block
+ * Version: 1.0.0
+ * Author: Mantas Daraciunas
+ * License: GPL2
+ * License URI: https://www.gnu.org/licenses/gpl-2.0.html
+ * Text Domain: NematomiVandenyne
+ * Domain Path: /languages
+ *
 */
 
 if (!function_exists('write_log')) {
