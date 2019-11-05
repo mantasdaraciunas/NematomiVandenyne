@@ -135,6 +135,19 @@ $front_page_cat_height: 253px;
       background-size: cover;
     }
 
+    img.start-image {
+      position: absolute;
+      height: 100%;
+      min-width: 60%;
+      object-fit: cover;
+
+      @media screen and (max-width: 991px) {
+        width: 100%;
+        height: auto;
+        min-height: 100%;
+      }
+    }
+
     &:after {
       content: "";
       position: absolute;
