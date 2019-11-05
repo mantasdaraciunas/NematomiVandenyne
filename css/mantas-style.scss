@@ -135,7 +135,7 @@ $front_page_cat_height: 253px;
       background-size: cover;
     }
 
-    img.start-image {
+    img.star-image {
       position: absolute;
       height: 100%;
       min-width: 60%;
@@ -143,8 +143,6 @@ $front_page_cat_height: 253px;
 
       @media screen and (max-width: 991px) {
         width: 100%;
-        height: auto;
-        min-height: 100%;
       }
     }
 
