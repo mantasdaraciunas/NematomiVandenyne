@@ -3,7 +3,7 @@
  * Plugin Name: Nematomi Vandenyne Plugin
  * Plugin URI: https://vandenyne.lt
  * Description: This plugin creates a Gutenberg block
- * Version: 1.0.0
+ * Version: 1.0.1
  * Author: Mantas Daraciunas
  * License: GPL2
  * License URI: https://www.gnu.org/licenses/gpl-2.0.html
@@ -177,7 +177,7 @@ wp_enqueue_style('custom-mantas-css', plugins_url('/css/mantas-style.min.css', _
 
 define( 'CB_PLUGIN_URL', plugins_url( 'NematomiVandenyne' ) );
 define( 'CB_PLUGIN_DIR_PATH', plugin_dir_path( __FILE__ ) );
-function gutenberg_custom_blocks() {
+function product_block_register() {
 	// Block front end styles.
 	wp_register_style(
 		'products-block-front-end-styles',
@@ -209,4 +209,4 @@ function gutenberg_custom_blocks() {
 		)
 	);
 }
-add_action( 'init', 'gutenberg_custom_blocks' );
+add_action( 'init', 'product_block_register' );
