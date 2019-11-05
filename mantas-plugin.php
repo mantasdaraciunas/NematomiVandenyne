@@ -192,7 +192,7 @@ function gutenberg_custom_blocks() {
 		true
 	);
 	register_block_type(
-		'NematomiVandenyne/products-block',
+		'NematomiVandenyne/products-block/products-block',
 		array(
 			'style'         => 'products-block-front-end-styles',
 			'editor_style'  => 'products-block-editor-styles',

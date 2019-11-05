@@ -1,5 +1,5 @@
-wp.blocks.registerBlockType("NematomiVandenyne/products-block", {
-  title: wp.i18n.__("Products Block", "NematomiVandenyne"),
+wp.blocks.registerBlockType("NematomiVandenyne/products-block/products-block", {
+  title: wp.i18n.__("Mantas", "NematomiVandenyne"),
   description: wp.i18n.__("Handpicked Producs"),
   icon: "universal-access-alt",
   category: "common",
