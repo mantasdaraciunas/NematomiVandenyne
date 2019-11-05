@@ -175,22 +175,19 @@ add_action( 'woocommerce_init', 'wc_remove_product_schema_product_archive' );
 
 wp_enqueue_style('custom-mantas-css', plugins_url('/css/mantas-style.min.css', __FILE__));
 
-add_action( 'enqueue_block_editor_assets', 'gb_block_01_basic_editor_assets' );
-
-function gb_block_01_basic_editor_assets() {
-	// Scripts.
-	wp_enqueue_script(
-		'gb-block-01-basic',
-		plugins_url( 'products-block.js', __FILE__ ),
-		array( 'wp-blocks', 'wp-i18n', 'wp-element' ),
-		filemtime( plugin_dir_path( __FILE__ ) . 'products-block.js' )
-	);
-
-	// Styles.
-	wp_enqueue_style(
-		'gb-block-01-basic-editor',
-		plugins_url( 'editor.css', __FILE__ ),
-		array( 'wp-edit-blocks' ),
-		filemtime( plugin_dir_path( __FILE__ ) . 'editor.css' )
-	);
+/*
+Plugin Name: Gutenberg examples 01
+*/
+function gutenberg_examples_01_register_block() {
+    wp_register_script(
+        'gutenberg-examples-01',
+        plugins_url( 'block.js', __FILE__ ),
+        array( 'wp-blocks', 'wp-element' )
+    );
+ 
+    register_block_type( 'gutenberg-examples/example-01-basic', array(
+        'editor_script' => 'gutenberg-examples-01',
+    ) );
+ 
 }
+add_action( 'init', 'gutenberg_examples_01_register_block' );
