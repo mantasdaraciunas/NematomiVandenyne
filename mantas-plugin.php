@@ -175,18 +175,3 @@ add_action( 'woocommerce_init', 'wc_remove_product_schema_product_archive' );
 
 wp_enqueue_style('custom-mantas-css', plugins_url('/css/mantas-style.min.css', __FILE__));
 
-
-function gutenberg_examples_01_register_block() {
-    write_log("gutenberg_examples_01_register_block");
-    wp_register_script(
-        'gutenberg-examples-01',
-        plugins_url( 'block.js', __FILE__ ),
-        array( 'wp-blocks', 'wp-element' )
-    );
- 
-    $res = register_block_type( 'gutenberg-examples/example-01-basic', array(
-        'editor_script' => 'gutenberg-examples-01',
-    ) );
-    write_log("gutenberg_examples_01_register_block res" . $res);
-}
-add_action( 'init', 'gutenberg_examples_01_register_block' );
