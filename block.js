@@ -1,4 +1,5 @@
 (function(blocks, element) {
+  console.log("Register block");
   var el = element.createElement;
 
   var blockStyle = {
@@ -7,6 +8,7 @@
     padding: "20px"
   };
 
+  console.log("Register block", blocks, el);
   blocks.registerBlockType("gutenberg-examples/example-01-basic", {
     title: "Example: Basic",
     icon: "universal-access-alt",
