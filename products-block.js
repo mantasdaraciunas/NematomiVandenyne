@@ -1,23 +1,17 @@
-console.log("Registering Block");
-wp.blocks.registerBlockType("NematomiVandenyne/products-block", {
-  title: wp.i18n.__("Mantas"),
-  description: wp.i18n.__("Handpicked Producs"),
-  icon: "universal-access-alt",
-  category: "common",
+(function() {
+  var registerBlockType = wp.blocks.registerBlockType;
 
-  edit: function() {
-    return wp.element.createElement(
-      "p",
-      { className: "custom-block" },
-      "Hello World"
-    );
-  },
+  registerBlockType("NematomiVandenyne/products-block", {
+    title: __("GB Basic", "GB"),
+    icon: "shield-alt",
+    category: "common",
 
-  save: function() {
-    return wp.element.createElement(
-      "p",
-      { className: "custom-block" },
-      "Saves in post Content"
-    );
-  }
-});
+    edit: function(props) {
+      return wp.element.createElement(
+        "p",
+        { className: props.className },
+        "Hello World! — from the editor (01 Basic Block)."
+      );
+    }
+  });
+})();
