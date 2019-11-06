@@ -223,6 +223,10 @@ input[type="submit"]:hover,
   }
 }
 
+#nm-shop {
+  font-family: Jura, sans-serif;
+}
+
 .woocommerce-loop-product__title {
   padding-right: 0 !important;
 }
@@ -565,6 +569,10 @@ input[type="submit"]:hover,
             flex: 1 0 100% !important;
     max-width: 100% !important;
   }
+}
+
+#wfspb-main-content {
+  font-family: Jura, sans-serif;
 }
 
 #wfspb-main-content .woocommerce-Price-amount.amount {
