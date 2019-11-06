@@ -238,6 +238,14 @@ $front_page_cat_height: 253px;
   .nm-row:last-child {
     margin-bottom: 0;
   }
+
+  .nm-cart-panel-quantity-pricing {
+    display: none;
+  }
+
+  .nm-cart-panel-summary-subtotal {
+    color: #dc9814;
+  }
 }
 
 .front_title {

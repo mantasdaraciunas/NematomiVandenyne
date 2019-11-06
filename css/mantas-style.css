@@ -547,6 +547,14 @@ input[type="submit"]:hover,
   margin-bottom: 0;
 }
 
+.front-page .nm-cart-panel-quantity-pricing {
+  display: none;
+}
+
+.front-page .nm-cart-panel-summary-subtotal {
+  color: #dc9814;
+}
+
 .front_title {
   text-align: center;
   font-size: 2.4rem;
