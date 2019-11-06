@@ -15,11 +15,14 @@
     }
 
     li:hover .price {
-      opacity: 1;
+      opacity: 1 !important;
     }
 
     li:hover .nm-shop-loop-actions {
-      color: #282828;
+      &,
+      .button {
+        color: #282828;
+      }
     }
   }
 }

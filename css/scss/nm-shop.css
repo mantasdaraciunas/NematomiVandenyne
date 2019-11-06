@@ -12,9 +12,10 @@
     opacity: 1;
   }
   .products li:hover .price {
-    opacity: 1;
+    opacity: 1 !important;
   }
-  .products li:hover .nm-shop-loop-actions {
+  .products li:hover .nm-shop-loop-actions,
+  .products li:hover .nm-shop-loop-actions .button {
     color: #282828;
   }
 }
