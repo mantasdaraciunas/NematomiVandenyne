@@ -24,4 +24,23 @@
     opacity: 1 !important;
   }
 }
+
+.nm-shop-loop-actions > a,
+.nm-shop-loop-actions > a:active,
+.nm-shop-loop-actions > a:focus {
+  color: #282828;
+}
+
+.nm-shop-loop-actions > a {
+  position: relative;
+  display: inline-block;
+  font-size: inherit;
+  line-height: inherit;
+  white-space: nowrap;
+  margin-left: 10px;
+  padding: 0;
+  text-align: left;
+  border-bottom: 1px solid #cfcfcf;
+  background-color: transparent;
+}
 /*# sourceMappingURL=nm-shop.css.map */
