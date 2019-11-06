@@ -291,3 +291,9 @@ $front_page_cat_height: 253px;
     max-width: 100% !important;
   }
 }
+
+#wfspb-main-content {
+  .woocommerce-Price-amount.amount {
+    color: #dc9814;
+  }
+}
