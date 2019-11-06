@@ -277,3 +277,17 @@ $front_page_cat_height: 253px;
   padding-top: 5px !important;
   padding-bottom: 5px !important;
 }
+
+@media screen and (max-width: 991px) {
+  .wc-block-grid .wc-block-grid__product {
+    flex: 1 0 50% !important;
+    max-width: 50% !important;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .wc-block-grid .wc-block-grid__product {
+    flex: 1 0 100% !important;
+    max-width: 100% !important;
+  }
+}
