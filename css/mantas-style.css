@@ -228,10 +228,10 @@ input[type="submit"]:hover,
 }
 
 @media screen and (max-width: 991px) {
-  .nm-shop-loop-details {
+  .products .nm-shop-loop-details {
     text-align: center;
   }
-  .nm-shop-loop-actions {
+  .products .nm-shop-loop-actions {
     position: relative;
     left: 0;
     opacity: 1;
