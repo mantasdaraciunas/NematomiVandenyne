@@ -18,8 +18,8 @@ $front_page_cat_height: 253px;
     display: none;
   }
 
-  .nm-cart-panel-summary-subtotal {
-    color: #dc9814;
+  .nm-cart-panel-summary-subtotal .woocommerce-Price-amount.amount {
+    color: #dc9814 !important;
   }
 }
 
