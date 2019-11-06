@@ -9,6 +9,7 @@
 @import "scss/handpicked-products";
 @import "scss/cookie-law";
 @import "scss/footer";
+@import "scss/nm-shop";
 
 $front_page_cat_height: 253px;
 
@@ -161,19 +162,6 @@ $front_page_cat_height: 253px;
       @media screen and (max-width: 991px) {
         background: rgba(255, 255, 255, 0.7);
       }
-    }
-  }
-  .woocommerce-loop-product__title {
-    padding-right: 0 !important;
-  }
-  @media screen and (max-width: 991px) {
-    .nm-shop-loop-details {
-      text-align: center;
-    }
-
-    .nm-shop-loop-actions {
-      position: relative;
-      opacity: 1;
     }
   }
 

@@ -1,0 +1,21 @@
+.woocommerce-loop-product__title {
+  padding-right: 0 !important;
+}
+
+@media screen and (max-width: 991px) {
+  .nm-shop-loop-details {
+    text-align: center;
+  }
+  .nm-shop-loop-actions {
+    position: relative;
+    left: 0;
+    opacity: 1;
+  }
+  .products li:hover .price {
+    opacity: 1;
+  }
+  .products li:hover .nm-shop-loop-actions {
+    color: #282828;
+  }
+}
+/*# sourceMappingURL=nm-shop.css.map */
