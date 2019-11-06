@@ -13,6 +13,16 @@
 
 $front_page_cat_height: 253px;
 
+.page-template-FrontPageRedesign {
+  .nm-cart-panel-quantity-pricing {
+    display: none;
+  }
+
+  .nm-cart-panel-summary-subtotal {
+    color: #dc9814;
+  }
+}
+
 .front-page {
   color: #282828;
   font-family: "Jura", sans-serif !important;
@@ -237,14 +247,6 @@ $front_page_cat_height: 253px;
 
   .nm-row:last-child {
     margin-bottom: 0;
-  }
-
-  .nm-cart-panel-quantity-pricing {
-    display: none;
-  }
-
-  .nm-cart-panel-summary-subtotal {
-    color: #dc9814;
   }
 }
 
