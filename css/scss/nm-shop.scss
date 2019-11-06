@@ -7,6 +7,12 @@
 }
 
 .products {
+  li:hover .nm-shop-loop-actions {
+    &,
+    .button {
+      color: #282828;
+    }
+  }
   @media screen and (max-width: 991px) {
     .nm-shop-loop-details {
       text-align: center;
@@ -20,13 +26,6 @@
 
     li:hover .price {
       opacity: 1 !important;
-    }
-
-    li:hover .nm-shop-loop-actions {
-      &,
-      .button {
-        color: #282828;
-      }
     }
   }
 }
