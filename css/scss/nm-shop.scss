@@ -14,10 +14,6 @@
     }
   }
   @media screen and (max-width: 991px) {
-    .nm-shop-loop-details {
-      text-align: center;
-    }
-
     .nm-shop-loop-actions {
       position: relative;
       left: 0;
@@ -28,6 +24,9 @@
       opacity: 1 !important;
     }
   }
+}
+.nm-shop-loop-details {
+  text-align: center;
 }
 
 .nm-shop-loop-actions > a,
@@ -42,7 +41,7 @@
   font-size: inherit;
   line-height: inherit;
   white-space: nowrap;
-  margin-left: 10px;
+  margin-left: 0;
   padding: 0;
   text-align: left;
   border-bottom: 1px solid #cfcfcf;
