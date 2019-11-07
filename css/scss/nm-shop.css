@@ -44,4 +44,9 @@
   border-bottom: 1px solid #cfcfcf;
   background-color: transparent;
 }
+
+.nm-single-product-bg,
+.has-bg-color .nm-single-product-bg {
+  background: #fff;
+}
 /*# sourceMappingURL=nm-shop.css.map */

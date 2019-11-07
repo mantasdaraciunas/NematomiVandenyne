@@ -270,6 +270,11 @@ input[type="submit"]:hover,
   background-color: transparent;
 }
 
+.nm-single-product-bg,
+.has-bg-color .nm-single-product-bg {
+  background: #fff;
+}
+
 .page-template-FrontPageRedesign .nm-cart-panel-quantity-pricing {
   display: none;
 }
