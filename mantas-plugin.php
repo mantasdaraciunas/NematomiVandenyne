@@ -66,7 +66,7 @@ if ( ! function_exists( 'mantas_categories_view' ) ) {
                                     $categories_view_output .= '</a></div>';
                                 }
                                 foreach($categories as $cat):
-                                    if(in_array($cat->slug, ['kaledos'])) continue;
+                                    if(in_array($cat->slug, ['tvarios-kaledos'])) continue;
 
                                     $categories_view_output .= '<div class="col col-xs-6 col-sm-4 col-md-2 shop-categories__cat">';
                                     $categories_view_output .= '<a href="'. get_term_link( (int) $cat->term_id, 'product_cat' ) . '" >';
@@ -91,7 +91,7 @@ function prefix_custom_pre_get_posts_query( $q ) {
 	    $tax_query[] = array(
 	           'taxonomy' => 'product_cat',
 	           'field'    => 'slug',
-	           'terms'    => array( 'kaledos' ),
+	           'terms'    => array( 'tvarios-kaledos' ),
 	           'operator' => 'NOT IN'
 	    );
 	
