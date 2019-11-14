@@ -4,13 +4,15 @@
 
 .page-template-KaledosTemplate.header-on-scroll,
 .page-template-KaledosTemplate #nm-main-menu-ul > li > a,
-.page-template-KaledosTemplate #nm-right-menu-ul > li > a {
+.page-template-KaledosTemplate #nm-right-menu-ul > li > a,
+.page-template-KaledosTemplate #nm-header,
+.page-template-KaledosTemplate .nm-header {
   background: transparent !important;
   color: #fff !important;
 }
 
 .kaledos {
-  color: #282828;
+  color: #fff;
   font-family: "Jura", sans-serif !important;
 }
 
@@ -48,11 +50,13 @@
   font-weight: 700;
   text-transform: capitalize;
   text-align: center;
+  color: #fff;
 }
 
 .kaledos__subtitle {
   font-size: 2rem;
   font-weight: 200;
   text-align: center;
+  color: #fff;
 }
 /*# sourceMappingURL=kaledos.css.map */
