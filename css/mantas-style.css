@@ -373,7 +373,7 @@ input[type="submit"]:hover,
   bottom: 0;
   left: 0;
   right: 0;
-  background: linear-gradient(100deg, transparent 50%, rgba(255, 255, 255, 0.8) 50%);
+  background: linear-gradient(120deg, transparent 45%, rgba(255, 255, 255, 0.8) 45%);
 }
 
 @media screen and (max-width: 991px) {
