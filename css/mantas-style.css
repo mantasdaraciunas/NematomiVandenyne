@@ -332,6 +332,7 @@ input[type="submit"]:hover,
 
 .kaledos__text-box {
   color: #fff;
+  min-height: 200px;
 }
 
 .kaledos__text-box:before {
@@ -351,7 +352,19 @@ input[type="submit"]:hover,
   bottom: 0;
   left: 0;
   right: 0;
-  background: transparent;
+  background: -webkit-gradient(linear, left top, right top, color-stop(50%, transparent), color-stop(50%, rgba(255, 255, 255, 0.8)));
+  background: linear-gradient(90deg, transparent 50%, rgba(255, 255, 255, 0.8) 50%);
+}
+
+.kaledos__text-box-header {
+  color: #fff;
+  text-align: center;
+}
+
+.kaledos__text-box-text {
+  color: #282828;
+  font-size: 1.1rem;
+  padding: 1rem 3rem;
 }
 
 .page-template-FrontPageRedesign .nm-cart-panel-quantity-pricing {
