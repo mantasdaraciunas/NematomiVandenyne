@@ -275,6 +275,10 @@ input[type="submit"]:hover,
   background: #fff;
 }
 
+.page-template-KaledosTemplate .header-border-1 .nm-header {
+  border: none;
+}
+
 .kaledos {
   color: #282828;
   font-family: "Jura", sans-serif !important;

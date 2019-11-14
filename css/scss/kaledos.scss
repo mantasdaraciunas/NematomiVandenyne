@@ -1,3 +1,14 @@
+.page-template-KaledosTemplate {
+  .header-border-1 .nm-header {
+    border: none;
+  }
+
+  .header-on-scroll {
+    background: transparent;
+    color: #fff;
+  }
+}
+
 .kaledos {
   color: #282828;
   font-family: "Jura", sans-serif !important;
@@ -7,6 +18,8 @@
     height: 100vh;
     background-size: cover;
     background-position: center;
+    background-color: rgba(0, 0, 0, 0.3);
+    background-blend-mode: overlay;
     display: flex;
     justify-content: center;
     align-items: center;
