@@ -47,7 +47,8 @@
 
   &__text-box {
     color: #fff;
-    min-height: 200px;
+    height: 300px;
+    position: relative;
     display: flex;
     align-items: center;
 
@@ -81,5 +82,7 @@
     color: #282828;
     font-size: 1.1rem;
     padding: 1rem 3rem;
+    text-align: center;
+    z-index: 1;
   }
 }

@@ -332,7 +332,8 @@ input[type="submit"]:hover,
 
 .kaledos__text-box {
   color: #fff;
-  min-height: 200px;
+  height: 300px;
+  position: relative;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -371,6 +372,8 @@ input[type="submit"]:hover,
   color: #282828;
   font-size: 1.1rem;
   padding: 1rem 3rem;
+  text-align: center;
+  z-index: 1;
 }
 
 .page-template-FrontPageRedesign .nm-cart-panel-quantity-pricing {
