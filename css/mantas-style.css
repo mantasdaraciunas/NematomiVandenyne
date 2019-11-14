@@ -279,7 +279,7 @@ input[type="submit"]:hover,
   border: none !important;
 }
 
-.page-template-KaledosTemplate .header-on-scroll,
+.page-template-KaledosTemplate.header-on-scroll,
 .page-template-KaledosTemplate #nm-main-menu-ul > li > a,
 .page-template-KaledosTemplate #nm-right-menu-ul > li > a {
   background: transparent !important;
