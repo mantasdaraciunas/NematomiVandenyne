@@ -47,10 +47,13 @@
 
   &__text-box {
     color: #fff;
-    height: 300px;
     position: relative;
-    display: flex;
-    align-items: center;
+
+    .n {
+      height: 100%;
+      display: flex;
+      align-items: center;
+    }
 
     &:before {
       content: "";
@@ -59,29 +62,28 @@
       bottom: 0;
       left: 0;
       right: 0;
-      background: transparent;
-    }
-
-    &:after {
-      content: "";
-      position: absolute;
-      top: 0;
-      bottom: 0;
-      left: 0;
-      right: 0;
       background: linear-gradient(90deg, transparent 50%, rgba(#fff, 0.8) 50%);
+
+      @media screen and (max-width: 991px) {
+        background: rgba(#fff, 0.9);
+      }
     }
   }
 
   &__text-box-header {
     color: #fff;
     text-align: center;
+    font-weight: bold;
+
+    @media screen and (max-width: 991px) {
+      color: #282828;
+    }
   }
 
   &__text-box-text {
     color: #282828;
     font-size: 1.1rem;
-    padding: 1rem 3rem;
+    padding: 2rem 2rem !important;
     text-align: center;
     z-index: 1;
   }

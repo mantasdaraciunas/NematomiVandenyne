@@ -55,8 +55,11 @@
 
 .kaledos__text-box {
   color: #fff;
-  height: 300px;
   position: relative;
+}
+
+.kaledos__text-box .n {
+  height: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -72,29 +75,32 @@
   bottom: 0;
   left: 0;
   right: 0;
-  background: transparent;
-}
-
-.kaledos__text-box:after {
-  content: "";
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
   background: -webkit-gradient(linear, left top, right top, color-stop(50%, transparent), color-stop(50%, rgba(255, 255, 255, 0.8)));
   background: linear-gradient(90deg, transparent 50%, rgba(255, 255, 255, 0.8) 50%);
+}
+
+@media screen and (max-width: 991px) {
+  .kaledos__text-box:before {
+    background: rgba(255, 255, 255, 0.9);
+  }
 }
 
 .kaledos__text-box-header {
   color: #fff;
   text-align: center;
+  font-weight: bold;
+}
+
+@media screen and (max-width: 991px) {
+  .kaledos__text-box-header {
+    color: #282828;
+  }
 }
 
 .kaledos__text-box-text {
   color: #282828;
   font-size: 1.1rem;
-  padding: 1rem 3rem;
+  padding: 2rem 2rem !important;
   text-align: center;
   z-index: 1;
 }
