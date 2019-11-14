@@ -58,7 +58,13 @@
   position: relative;
 }
 
-.kaledos__text-box .n {
+@media screen and (max-width: 991px) {
+  .kaledos__text-box {
+    padding: 2rem auto;
+  }
+}
+
+.kaledos__text-box .nm-row {
   height: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -66,6 +72,15 @@
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+}
+
+@media screen and (max-width: 991px) {
+  .kaledos__text-box .nm-row {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
 }
 
 .kaledos__text-box:before {
@@ -81,7 +96,7 @@
 
 @media screen and (max-width: 991px) {
   .kaledos__text-box:before {
-    background: rgba(255, 255, 255, 0.9);
+    background: rgba(255, 255, 255, 0.8);
   }
 }
 
