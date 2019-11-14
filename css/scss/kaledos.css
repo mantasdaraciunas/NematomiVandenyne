@@ -1,10 +1,12 @@
-.page-template-KaledosTemplate .header-border-1 .nm-header {
-  border: none;
+.page-template-KaledosTemplate .nm-header {
+  border: none !important;
 }
 
-.page-template-KaledosTemplate .header-on-scroll {
-  background: transparent;
-  color: #fff;
+.page-template-KaledosTemplate .header-on-scroll,
+.page-template-KaledosTemplate #nm-main-menu-ul > li > a,
+.page-template-KaledosTemplate #nm-right-menu-ul > li > a {
+  background: transparent !important;
+  color: #fff !important;
 }
 
 .kaledos {

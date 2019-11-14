@@ -1,11 +1,13 @@
 .page-template-KaledosTemplate {
-  .header-border-1 .nm-header {
-    border: none;
+  .nm-header {
+    border: none !important;
   }
 
-  .header-on-scroll {
-    background: transparent;
-    color: #fff;
+  .header-on-scroll,
+  #nm-main-menu-ul > li > a,
+  #nm-right-menu-ul > li > a {
+    background: transparent !important;
+    color: #fff !important;
   }
 }
 

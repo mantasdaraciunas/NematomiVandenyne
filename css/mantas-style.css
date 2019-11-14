@@ -275,8 +275,15 @@ input[type="submit"]:hover,
   background: #fff;
 }
 
-.page-template-KaledosTemplate .header-border-1 .nm-header {
-  border: none;
+.page-template-KaledosTemplate .nm-header {
+  border: none !important;
+}
+
+.page-template-KaledosTemplate .header-on-scroll,
+.page-template-KaledosTemplate #nm-main-menu-ul > li > a,
+.page-template-KaledosTemplate #nm-right-menu-ul > li > a {
+  background: transparent !important;
+  color: #fff !important;
 }
 
 .kaledos {
@@ -289,6 +296,8 @@ input[type="submit"]:hover,
   height: 100vh;
   background-size: cover;
   background-position: center;
+  background-color: rgba(0, 0, 0, 0.3);
+  background-blend-mode: overlay;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
