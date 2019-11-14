@@ -333,6 +333,12 @@ input[type="submit"]:hover,
 .kaledos__text-box {
   color: #fff;
   min-height: 200px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .kaledos__text-box:before {
