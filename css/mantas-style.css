@@ -47,6 +47,16 @@ input[type="submit"]:hover,
           transform: translateY(-2px);
 }
 
+.primary-header {
+  text-align: center;
+  font-size: 2.4rem;
+}
+
+.secondary-header {
+  text-align: center;
+  font-size: 1.5rem;
+}
+
 .contact {
   position: relative;
   font-family: Jura !important;
@@ -405,6 +415,7 @@ input[type="submit"]:hover,
 
 .kaledos__product-box {
   margin-top: 100px;
+  background: rgba(255, 255, 255, 0.9);
 }
 
 .kaledos__product-box,
