@@ -20,6 +20,7 @@
   background-position: center;
   background-color: rgba(0, 0, 0, 0.3);
   background-blend-mode: overlay;
+  background-attachment: fixed;
 
   @media screen and (max-width: 991px) {
     background-color: rgba(0, 0, 0, 0.6);
@@ -98,5 +99,14 @@
     padding: 2rem 2rem !important;
     text-align: center;
     z-index: 1;
+  }
+
+  &__product-box {
+    margin-top: 100px;
+
+    &,
+    & > * {
+      color: #fff !important;
+    }
   }
 }
