@@ -18,13 +18,9 @@
   font-family: "Jura", sans-serif !important;
   background-size: cover;
   background-position: center;
-  background-color: rgba(0, 0, 0, 0.3);
+  background-color: rgba(0, 0, 0, 0.6);
   background-blend-mode: overlay;
   background-attachment: fixed;
-
-  @media screen and (max-width: 991px) {
-    background-color: rgba(0, 0, 0, 0.6);
-  }
 
   &__main {
     width: 100%;
@@ -119,7 +115,7 @@
   &__products {
     background: rgba(#fff, 0.9);
     padding: 3rem;
-    border-radius: 10px 10px 0 0;
+    border-radius: 10px;
   }
 
   &__contact {
@@ -132,6 +128,17 @@
 
     input[type="submit"] {
       @include button;
+    }
+
+    .wpcf7-form-control {
+      &:not(.wpcf7-acceptance) {
+        background: rgba(#fff, 0.7);
+        color: #181818;
+      }
+    }
+
+    label {
+      font-weight: bold;
     }
 
     &-title,
