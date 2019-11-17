@@ -311,6 +311,7 @@ input[type="submit"]:hover,
 
 .kaledos * {
   z-index: 2;
+  position: relative;
 }
 
 .kaledos__img {
@@ -337,6 +338,7 @@ input[type="submit"]:hover,
   left: 0;
   right: 0;
   background: rgba(0, 0, 0, 0.6);
+  z-index: 2;
 }
 
 .kaledos__main {
