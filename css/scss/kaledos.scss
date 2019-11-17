@@ -38,7 +38,8 @@
 
     > img {
       width: 100%;
-      height: auto;
+      min-width: 100vw;
+      min-height: 100vh;
       object-fit: cover;
     }
 
