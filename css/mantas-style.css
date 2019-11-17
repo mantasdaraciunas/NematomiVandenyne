@@ -424,7 +424,7 @@ input[type="submit"]:hover,
 
 .kaledos__products {
   background: rgba(255, 255, 255, 0.9);
-  padding: 3rem;
+  padding: 3rem 3rem 0 3rem !important;
   border-radius: 10px;
 }
 
