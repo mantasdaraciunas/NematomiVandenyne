@@ -1,5 +1,4 @@
-input[type="submit"],
-.btn {
+@mixin button {
   border: 1px solid #000;
   background: #fff;
   border-radius: 5px;
@@ -11,4 +10,9 @@ input[type="submit"],
     text-decoration: underline;
     transform: translateY(-2px);
   }
+}
+
+input[type="submit"],
+.btn {
+  @include button;
 }

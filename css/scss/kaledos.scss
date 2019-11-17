@@ -103,11 +103,40 @@
 
   &__product-box {
     margin-top: 100px;
-    background: rgba(#fff, 0.9);
 
     &,
     & > * {
       color: #fff !important;
+    }
+  }
+
+  &__product-box-title {
+    font-size: 2.8rem;
+    margin: 2rem auto 3rem;
+    font-weight: 500;
+  }
+
+  &__products {
+    background: rgba(#fff, 0.9);
+    padding: 3rem;
+    border-radius: 10px 10px 0 0;
+  }
+
+  &__contact {
+    margin-top: 100px;
+
+    .nm-row {
+      display: flex;
+      justify-content: center;
+    }
+
+    input[type="submit"] {
+      @include button;
+    }
+
+    &-title,
+    &-subtitle {
+      color: #fff;
     }
   }
 }

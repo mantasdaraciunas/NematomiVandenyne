@@ -415,12 +415,56 @@ input[type="submit"]:hover,
 
 .kaledos__product-box {
   margin-top: 100px;
-  background: rgba(255, 255, 255, 0.9);
 }
 
 .kaledos__product-box,
 .kaledos__product-box > * {
   color: #fff !important;
+}
+
+.kaledos__product-box-title {
+  font-size: 2.8rem;
+  margin: 2rem auto 3rem;
+  font-weight: 500;
+}
+
+.kaledos__products {
+  background: rgba(255, 255, 255, 0.9);
+  padding: 3rem;
+  border-radius: 10px 10px 0 0;
+}
+
+.kaledos__contact {
+  margin-top: 100px;
+}
+
+.kaledos__contact .nm-row {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.kaledos__contact input[type="submit"] {
+  border: 1px solid #000;
+  background: #fff;
+  border-radius: 5px;
+  padding: 0.5rem 1.8rem;
+  color: #000;
+  -webkit-transition: all 0.4s;
+  transition: all 0.4s;
+}
+
+.kaledos__contact input[type="submit"]:hover {
+  text-decoration: underline;
+  -webkit-transform: translateY(-2px);
+          transform: translateY(-2px);
+}
+
+.kaledos__contact-title, .kaledos__contact-subtitle {
+  color: #fff;
 }
 
 .page-template-FrontPageRedesign .nm-cart-panel-quantity-pricing {
