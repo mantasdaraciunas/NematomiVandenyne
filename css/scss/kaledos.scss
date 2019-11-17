@@ -21,6 +21,36 @@
   background-color: rgba(0, 0, 0, 0.6);
   background-blend-mode: overlay;
   background-attachment: fixed;
+  position: relative;
+
+  * {
+    z-index: 2;
+  }
+
+  &__img {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 1;
+
+    > img {
+      width: 100%;
+      height: auto;
+      object-fit: cover;
+    }
+
+    &:after {
+      content: "";
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: rgba(#000, 0.6);
+    }
+  }
 
   &__main {
     width: 100%;

@@ -306,6 +306,37 @@ input[type="submit"]:hover,
   background-color: rgba(0, 0, 0, 0.6);
   background-blend-mode: overlay;
   background-attachment: fixed;
+  position: relative;
+}
+
+.kaledos * {
+  z-index: 2;
+}
+
+.kaledos__img {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 1;
+}
+
+.kaledos__img > img {
+  width: 100%;
+  height: auto;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.kaledos__img:after {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(0, 0, 0, 0.6);
 }
 
 .kaledos__main {
