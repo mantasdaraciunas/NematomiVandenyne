@@ -535,13 +535,8 @@ input[type="submit"]:hover,
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-}
-
-@media screen and (max-width: 991px) {
-  .front-page__image {
-    background-color: rgba(153, 204, 204, 0.5);
-    background-blend-mode: overlay;
-  }
+  background-color: rgba(0, 0, 0, 0.3);
+  background-blend-mode: overlay;
 }
 
 .front-page__title {
