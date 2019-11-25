@@ -786,6 +786,17 @@ input[type="submit"]:hover,
   margin-bottom: 0;
 }
 
+.front-page .nm-shop-loop-thumbnail {
+  height: 250px;
+  overflow: hidden;
+}
+
+.front-page .nm-shop-loop-thumbnail img {
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
 .front_title {
   text-align: center;
   font-size: 2.4rem;

@@ -253,6 +253,16 @@ $front_page_cat_height: 253px;
   .nm-row:last-child {
     margin-bottom: 0;
   }
+
+  .nm-shop-loop-thumbnail {
+    height: 250px;
+    overflow: hidden;
+
+    img {
+      height: 100%;
+      object-fit: cover;
+    }
+  }
 }
 
 .front_title {
