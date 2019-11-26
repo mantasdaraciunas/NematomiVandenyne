@@ -612,14 +612,6 @@ input[type="submit"]:hover,
   z-index: 2;
 }
 
-.front-page .front-page__cat__cat-bg {
-  position: absolute;
-  -o-object-fit: cover;
-     object-fit: cover;
-  width: 100%;
-  z-index: 0;
-}
-
 .front-page .front-page__cat:before {
   content: "";
   position: absolute;
@@ -633,6 +625,14 @@ input[type="submit"]:hover,
 .front-page__cat:hover {
   opacity: 1;
   font-size: 1.6rem;
+}
+
+.front-page__cat-bg {
+  position: absolute;
+  -o-object-fit: cover;
+     object-fit: cover;
+  width: 100%;
+  z-index: 0;
 }
 
 .front-page__cat-img {

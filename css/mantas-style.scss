@@ -106,13 +106,6 @@ $front_page_cat_height: 253px;
       z-index: 2;
     }
 
-    &__cat-bg {
-      position: absolute;
-      object-fit: cover;
-      width: 100%;
-      z-index: 0;
-    }
-
     &:before {
       content: "";
       position: absolute;
@@ -127,6 +120,13 @@ $front_page_cat_height: 253px;
   &__cat:hover {
     opacity: 1;
     font-size: 1.6rem;
+  }
+
+  &__cat-bg {
+    position: absolute;
+    object-fit: cover;
+    width: 100%;
+    z-index: 0;
   }
 
   &__cat-img {
