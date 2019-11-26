@@ -96,19 +96,21 @@ $front_page_cat_height: 253px;
     background-repeat: no-repeat;
     font-size: 1.4rem;
     transition: all 0.4s;
+    overflow: hidden;
 
     &--secondary {
       background-color: #aec6cf;
     }
 
     > span {
-      z-index: 1;
+      z-index: 2;
     }
 
     &__cat-bg {
       position: absolute;
       object-fit: cover;
       width: 100%;
+      z-index: 0;
     }
 
     &:before {
