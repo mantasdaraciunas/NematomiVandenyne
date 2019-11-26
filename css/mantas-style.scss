@@ -105,6 +105,12 @@ $front_page_cat_height: 253px;
       z-index: 1;
     }
 
+    &__cat-bg {
+      position: absolute;
+      object-fit: cover;
+      width: 100%;
+    }
+
     &:before {
       content: "";
       position: absolute;

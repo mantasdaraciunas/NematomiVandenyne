@@ -611,6 +611,13 @@ input[type="submit"]:hover,
   z-index: 1;
 }
 
+.front-page .front-page__cat__cat-bg {
+  position: absolute;
+  -o-object-fit: cover;
+     object-fit: cover;
+  width: 100%;
+}
+
 .front-page .front-page__cat:before {
   content: "";
   position: absolute;
