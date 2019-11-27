@@ -143,6 +143,7 @@ $front_page_cat_height: 253px;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    flex-wrap: wrap;
   }
 
   &__star {
