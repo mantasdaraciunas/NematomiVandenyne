@@ -635,6 +635,13 @@ input[type="submit"]:hover,
   z-index: 0;
 }
 
+@media screen and (min-width: 992px) {
+  .front-page__cat-bg--secondary {
+    height: 100%;
+    width: auto;
+  }
+}
+
 .front-page__cat-img {
   width: 75px;
   fill: #fff !important;
