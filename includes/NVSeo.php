@@ -18,10 +18,19 @@ class NVSeo
 
         add_filter('wpseo_og_og_title', [$this, "nvseo_og_properties"]);
         add_filter('wpseo_og_og_url', [$this, "nvseo_og_properties"]);
+        add_filter('wpseo_opengraph_title', [$this, "nvseo_og_properties_title"]);
     }
 
     function rest_add_seo($response, $post, $request)
     {
+        global $wp_query;
+
+        $wp_query = new WP_Query(
+            [
+                'p' => $post->ID
+            ]
+        );
+
         $meta = get_post_meta($post->ID);
 
         $response->data['nv_seo'] = $this->mapMetaData($post, $meta);
@@ -31,6 +40,20 @@ class NVSeo
 
     function rest_add_seo_taxonomy($response, $post, $request)
     {
+        global $wp_query;
+
+        $wp_query = new WP_Query(
+            [
+                'tax_query' => array(
+                    array(
+                        'taxonomy' => $post->taxonomy,
+                        'field'    => 'term_id',
+                        'terms'    => $post->term_id,
+                    ),
+                ),
+            ]
+        );
+
         $meta = get_term_meta($post->term_id);
 
         $response->data['nv_seo'] = $this->mapMetaData($post, $meta);
@@ -44,6 +67,12 @@ class NVSeo
         write_log($content);
     }
 
+    function nvseo_og_properties_title($content)
+    {
+        write_log('Apply for title');
+        write_log($content);
+    }
+
     private function mapMetaData($post, $meta)
     {
         if (!is_array($meta)) {
@@ -51,7 +80,8 @@ class NVSeo
         }
 
         $seo = [
-            "title"       => $this->getTitle($post) . "| " . wp_title(),
+            "title"       => $this->getTitle($post) . " | "
+                . get_bloginfo('name'),
             "keywords"    => "",
             "description" => ""
         ];
@@ -59,7 +89,7 @@ class NVSeo
         if (array_key_exists("seo-title", $meta)) {
             $seo['title'] = (is_array($meta["seo-title"])
                     ? array_shift($meta["seo-title"]) : $meta["seo-title"])
-                . "| " . wp_title();
+                . " | " . get_bloginfo('name');
         }
 
         if (array_key_exists("seo-keywords", $meta)) {
@@ -73,7 +103,7 @@ class NVSeo
                 : $meta["seo-description"];
         }
 
-        $this->socialMeta($post, $seo);
+        $seo["meta"] = $this->socialMeta($post, $seo);
 
         return $seo;
     }
@@ -81,10 +111,13 @@ class NVSeo
     private function socialMeta($post, $seo)
     {
         //Use Yoast
+        ob_start();
+        global $wp_query;
+
         $wpseo = new \WPSEO_OpenGraph();
 
 
-        return [
+        $meta = [
             [
                 "property" => "og:locale",
                 "content"  => $wpseo->locale() ?: "lt_LT"
@@ -127,28 +160,35 @@ class NVSeo
                 "content"  => "594"
             ]
         ];
+        ob_end_clean();
+
+        return $meta;
     }
 
     private function getTitle($post, $full = false)
     {
+        $post = (array)$post;
+
         if (array_key_exists("title", $post)) {
             $title = $post['title'];
             if (is_array($title) && array_key_exists("rendered", $title)) {
-                return $title["rendered"] . ($full ? "| " . wp_title() : "");
+                return $title["rendered"] . ($full ? " | "
+                        . get_bloginfo('name') : "");
             }
 
-            return $title . ($full ? "| " . wp_title() : "");
+            return $title . ($full ? " | " . get_bloginfo('name') : "");
         }
 
         if (array_key_exists("name", $post)) {
             $title = $post['name'];
             if (is_array($title) && array_key_exists("rendered", $title)) {
-                return $title["rendered"] . ($full ? "| " . wp_title() : "");
+                return $title["rendered"] . ($full ? " | "
+                        . get_bloginfo('name') : "");
             }
 
-            return $title . ($full ? "| " . wp_title() : "");
+            return $title . ($full ? " | " . get_bloginfo('name') : "");
         }
 
-        return $full ? wp_title() : "";
+        return $full ? get_bloginfo('name') : "";
     }
 }
