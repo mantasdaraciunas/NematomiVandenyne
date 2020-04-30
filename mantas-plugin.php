@@ -34,20 +34,20 @@ if ( ! function_exists( 'mantas_categories_view' ) ) {
             $is_category = ( strlen( $current_cat_id ) > 0 ) ? true : false;
             $page_id = wc_get_page_id( 'shop' );
             $page_url = get_permalink( $page_id );
-            
+
             echo '<span id="current_cat" style="display:none">'.$current_cat_id.
             get_term_by( 'id', $current_cat_id, 'product_cat' )->name.
             '</span>';
 
             $currentCategoryName = $is_category ? get_term_by( 'id', $current_cat_id, 'product_cat' )->name : __("Viskas");
-            
+
             $args = array(
                 'taxonomy'		=> 'product_cat',
                 'type'			=> 'post',
                 'hide_empty'	=> true,
                 'hierarchical'	=> 0
             );
-                
+
             $categories = get_categories( $args );
 
             $categories_view_output .= '<div class="nm-row" style="width:80%">
@@ -87,15 +87,15 @@ function prefix_custom_pre_get_posts_query( $q ) {
 
 	if( is_shop() || is_page('shop') ) { // set conditions here
 	    $tax_query = (array) $q->get( 'tax_query' );
-	
+
 	    $tax_query[] = array(
 	           'taxonomy' => 'product_cat',
 	           'field'    => 'slug',
 	           'terms'    => array( 'tvarios-kaledos' ),
 	           'operator' => 'NOT IN'
 	    );
-	
-	
+
+
 	    $q->set( 'tax_query', $tax_query );
 	}
 }
@@ -140,7 +140,7 @@ add_action( 'woocommerce_init', 'wc_remove_product_schema_product_archive' );
 // add_action( 'woocommerce_shipping_method_chosen', 'check_if_local_pickup', 10, 1 );
 // function check_if_local_pickup( $chosen_method ) {
 //     $chosen_methods = WC()->session->get( 'chosen_shipping_methods' );
-//     $chosen_shipping = $chosen_methods[0]; 
+//     $chosen_shipping = $chosen_methods[0];
 //     try {
 //         write_log("------------ Start -------------");
 //         write_log($chosen_methods);
@@ -172,3 +172,67 @@ add_action( 'woocommerce_init', 'wc_remove_product_schema_product_archive' );
 //                 ['jquery'], "1", true);
 
 wp_enqueue_style('custom-mantas-css', plugins_url('/css/mantas-style.min.css', __FILE__));
+
+if ( ! function_exists( 'nv_rest_authorization' ) ) {
+    function nv_rest_authorization($request)
+    {
+        if ("tQvb4KjiCNsNXR.jA" !== $request['api_key']) {
+            throw \Exception("Unauthorized");
+        }
+    }
+}
+
+
+function order_add_post_meta_info($request) {
+
+    nv_rest_authorization($request);
+
+    if(empty($request['id']) || empty($request['meta_key']) || empty($request['meta_value'])) {
+        throw \Exception("Invalid data");
+    }
+
+    try {
+        return add_post_meta( $request['id'], $request['meta_key'], $request['meta_value'] );
+    } catch(\Exception $e) {
+        return $e->getMessage();
+    }
+}
+function order_update_post_meta_info($request) {
+
+    nv_rest_authorization($request);
+
+    if(empty($requewoocommerce_checkout_update_order_reviewst['id']) || empty($request['meta_key']) || empty($request['meta_value'])) {
+        throw \Exception("Invalid data");
+    }
+
+    try {
+        return update_post_meta( $request['id'], $request['meta_key'], $request['meta_value'] );
+    } catch(\Exception $e) {
+        return $e->getMessage();
+    }
+}
+
+function get_menu() {
+    # Change 'menu' to your own navigation slug.
+    return wp_get_nav_menu_items('Header');
+}
+
+add_action( 'rest_api_init', function () {
+    register_rest_route( 'vandenyne/v1', '/meta/(?P<id>\d+)', array(
+        'methods' => 'POST',
+        'callback' => 'order_add_post_meta_info',
+    ) );
+    register_rest_route( 'vandenyne/v1', '/meta-update/(?P<id>\d+)', array(
+        'methods' => 'POST',
+        'callback' => 'order_update_post_meta_info',
+    ) );
+    register_rest_route( 'vandenyne/v1', '/menu', array(
+        'methods' => 'GET',
+        'callback' => 'get_menu',
+    ) );
+} );
+
+
+// Register NVSeo Class
+$seo = new \NVSeo();
+
