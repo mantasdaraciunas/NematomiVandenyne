@@ -34,25 +34,32 @@ class NVSeo
         return $response;
     }
 
-    private function mapMetaData($meta) {
-        if(!is_array($meta)) return [];
+    private function mapMetaData($meta)
+    {
+        if (!is_array($meta)) {
+            return [];
+        }
 
         $seo = [
-            "title" => "",
-            "keywords" => "",
+            "title"       => "",
+            "keywords"    => "",
             "description" => ""
         ];
 
-        if(array_key_exists("seo-title", $meta)) {
-            $seo['title'] = $meta["seo-title"];
+        if (array_key_exists("seo-title", $meta)) {
+            $seo['title'] = is_array($meta["seo-title"])
+                ? array_shift($meta["seo-title"]) : $meta["seo-title"];
         }
 
-        if(array_key_exists("seo-keywords", $meta)) {
-            $seo['keywords'] = $meta["seo-keywords"];
+        if (array_key_exists("seo-keywords", $meta)) {
+            $seo['keywords'] = is_array($meta["seo-keywords"])
+                ? array_shift($meta["seo-keywords"]) : $meta["seo-keywords"];
         }
 
-        if(array_key_exists("seo-description", $meta)) {
-            $seo['description'] = $meta["seo-description"];
+        if (array_key_exists("seo-description", $meta)) {
+            $seo['description'] = is_array($meta["seo-description"])
+                ? array_shift($meta["seo-description"])
+                : $meta["seo-description"];
         }
 
         return $seo;
