@@ -234,7 +234,7 @@ add_action( 'rest_api_init', function () {
 
 
 // Register NVSeo Class
-require_once plugin_dir_path( __DIR__ ) . "/includes/NVSeo.php";
+require_once plugin_dir_path( __DIR__ ) . "NematomiVandenyne/includes/NVSeo.php";
 
 $seo = new \NVSeo();
 
