@@ -16,10 +16,12 @@ class NVSeo
 
     function register_hooks()
     {
-        add_filter('rest_prepare_post', [$this, 'rest_add_seo'], 11, 3);
-        add_filter('rest_prepare_page', [$this, 'rest_add_seo'], 11, 3);
+        add_filter('rest_prepare_post', [$this, 'rest_add_seo'], 10, 3);
+        add_filter('rest_prepare_page', [$this, 'rest_add_seo'], 10, 3);
         add_filter('woocommerce_rest_prepare_product_cat',
-            [$this, 'rest_add_seo_taxonomy'], 11, 3);
+            [$this, 'rest_add_seo_taxonomy'], 10, 3);
+        add_filter('woocommerce_rest_prepare_product_object',
+            [$this, 'rest_add_seo_product'], 10, 3);
 
 
         add_filter("wpseo_title", [$this, "nvseo_title"]);
@@ -59,6 +61,35 @@ class NVSeo
             ]
         );
 
+        if($wp_query->have_posts()) $wp_query->the_post();
+
+        $response->data['nv_seo'] = $this->mapMetaData($post);
+
+        return $response;
+    }
+
+    function rest_add_seo_product($response, \WC_Product $post)
+    {
+        global $wp_query;
+        global $current_nvseo_post;
+
+        $current_nvseo_post              = $post;
+        $this->post_seo[$this->postId()] = [];
+
+        $this->wpSeo = \WPSEO_Frontend::get_instance();
+
+
+        $wp_query = new WP_Query(
+            [
+                'page'      => "",
+                'product'   => "ben-anna-dantu-pasta-sensitive",
+                'post_type' => 'product',
+                'name'      => "ben-anna-dantu-pasta-sensitive"
+            ]
+        );
+
+        if($wp_query->have_posts()) $wp_query->the_post();
+
         $response->data['nv_seo'] = $this->mapMetaData($post);
 
         return $response;
@@ -87,6 +118,7 @@ class NVSeo
                 ),
             ]
         );
+
 
         $seo_meta = $this->mapMetaData($post);
 
@@ -206,14 +238,13 @@ class NVSeo
 
     private function mapMetaData($post)
     {
-        ob_start();
+
         $seo = [
             "title"  => $this->wpSeo->title("")
                 ?: $this->getTitle($post) . " | "
                 . get_bloginfo('name'),
             "robots" => $this->wpSeo->robots()
         ];
-
 
         //Set Description
         $this->wpSeo->metadesc();
@@ -224,7 +255,6 @@ class NVSeo
 
 
         $seo["meta"] = $this->socialMeta($post, $seo);
-        ob_end_clean();
 
         return $seo;
     }
@@ -232,7 +262,6 @@ class NVSeo
     private function socialMeta($post, $seo)
     {
         //Use Yoast
-        ob_start();
         new \WPSEO_OpenGraph();
         do_action('wpseo_opengraph');
 
@@ -291,7 +320,6 @@ class NVSeo
                     ? $this->post_seo[$this->postId()]['og_image_height'] : ""
             ]
         ];
-        ob_end_clean();
 
         return $meta;
     }
