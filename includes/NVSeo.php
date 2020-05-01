@@ -53,6 +53,8 @@ class NVSeo
         $current_nvseo_post              = $post;
         $this->post_seo[$this->postId()] = [];
 
+        ob_start();
+
         $this->wpSeo = \WPSEO_Frontend::get_instance();
 
         $wp_query = new WP_Query(
@@ -61,9 +63,17 @@ class NVSeo
             ]
         );
 
-        if($wp_query->have_posts()) $wp_query->the_post();
+        if ($wp_query->have_posts()) {
+            $wp_query->the_post();
+        }
 
-        $response->data['nv_seo'] = $this->mapMetaData($post);
+        $seo_meta = $this->mapMetaData($post);
+
+        ob_end_clean();
+
+        $this->post_seo[$this->postId()] = $seo_meta;
+
+        $response->data['nv_seo'] = $seo_meta;
 
         return $response;
     }
@@ -76,21 +86,31 @@ class NVSeo
         $current_nvseo_post              = $post;
         $this->post_seo[$this->postId()] = [];
 
-        $this->wpSeo = \WPSEO_Frontend::get_instance();
+        ob_start();
 
+        $this->wpSeo = \WPSEO_Frontend::get_instance();
 
         $wp_query = new WP_Query(
             [
                 'page'      => "",
-                'product'   => "ben-anna-dantu-pasta-sensitive",
+                'product'   => $post->get_slug(),
                 'post_type' => 'product',
-                'name'      => "ben-anna-dantu-pasta-sensitive"
+                'name'      => $post->get_slug()
             ]
         );
 
-        if($wp_query->have_posts()) $wp_query->the_post();
 
-        $response->data['nv_seo'] = $this->mapMetaData($post);
+        if ($wp_query->have_posts()) {
+            $wp_query->the_post();
+        }
+
+        $seo_meta = $this->mapMetaData($post);
+
+        ob_end_clean();
+
+        $this->post_seo[$this->postId()] = $seo_meta;
+
+        $response->data['nv_seo'] = $seo_meta;
 
         return $response;
     }
@@ -222,18 +242,22 @@ class NVSeo
     {
         global $current_nvseo_post;
 
-        if (is_null($current_nvseo_post)) {
+        if (is_null($current_nvseo_post)
+            || get_class($current_nvseo_post) === false
+        ) {
             return "";
         }
 
-        switch (get_class($current_nvseo_post)) {
-            case false:
-                return "";
-            case "WP_Term":
-                return "term_" . $current_nvseo_post->term_id;
-            default:
-                return $current_nvseo_post->ID;
+        if ($current_nvseo_post instanceof \WC_Product) {
+            return "product_" . $current_nvseo_post->get_slug();
         }
+
+        if ($current_nvseo_post instanceof \WP_Term) {
+            return "term_" . $current_nvseo_post->term_id;
+        }
+
+        return $current_nvseo_post->ID;
+
     }
 
     private function mapMetaData($post)
