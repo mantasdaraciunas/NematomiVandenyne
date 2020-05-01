@@ -263,22 +263,27 @@ class NVSeo
     private function mapMetaData($post)
     {
 
+        $title = $this->wpSeo->title("");
+
         $seo = [
-            "title"  => $this->wpSeo->title("")
-                ?: $this->getTitle($post) . " | "
-                . get_bloginfo('name'),
-            "robots" => $this->wpSeo->robots()
+            "title"  => !empty($title)
+                ? $title : $this->getTitle($post)
         ];
 
         //Set Description
         $this->wpSeo->metadesc();
 
-        $seo["description"]
-            = isset($this->post_seo[$this->postId()]['metadesc'])
-            ? $this->post_seo[$this->postId()]['metadesc'] : "not set";
-
-
-        $seo["meta"] = $this->socialMeta($post, $seo);
+        $seo["meta"] = array_merge([
+            [
+                "name" => "description",
+                "content"  => isset($this->post_seo[$this->postId()]['metadesc'])
+                    ? $this->post_seo[$this->postId()]['metadesc'] : ""
+            ],
+            [
+                "name" => "robots",
+                "content"  => $this->wpSeo->robots()
+            ],
+        ],$this->socialMeta($post, $seo));
 
         return $seo;
     }
